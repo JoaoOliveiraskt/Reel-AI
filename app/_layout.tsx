@@ -9,6 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import 'react-native-reanimated';
 import { ClerkProvider, ClerkLoaded } from '@clerk/clerk-expo';
 import { tokenCache } from '@clerk/clerk-expo/token-cache';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
@@ -60,6 +61,7 @@ export default function RootLayout() {
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <GestureHandlerRootView style={{ flex: 1 }}>
+        <BottomSheetModalProvider>
         <ThemeProvider>
           {showOnboarding ? (
             <>
@@ -101,6 +103,7 @@ export default function RootLayout() {
             </ClerkLoaded>
           )}
         </ThemeProvider>
+        </BottomSheetModalProvider>
       </GestureHandlerRootView>
     </ClerkProvider>
   );

@@ -158,13 +158,13 @@ export function MovieBottomSheet({ movie, isVisible, onClose }: MovieBottomSheet
   };
 
   return (
-    <View style={{ zIndex: 100 }}>
     <BottomSheet
       ref={sheetRef}
       index={-1}
       snapPoints={snapPoints}
       enablePanDownToClose
       onClose={onClose}
+      containerStyle={{ zIndex: 9999 }}
       backgroundStyle={{ backgroundColor: bgColor, borderTopLeftRadius: 26, borderTopRightRadius: 26 }}
       handleIndicatorStyle={{ backgroundColor: isDark ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.35)', position: 'absolute', top: 8, zIndex: 10 }}
       handleStyle={{ position: 'absolute', top: 0, width: '100%', zIndex: 10 }}
@@ -305,7 +305,6 @@ export function MovieBottomSheet({ movie, isVisible, onClose }: MovieBottomSheet
         ) : null}
       </BottomSheetScrollView>
     </BottomSheet>
-    </View>
   );
 }
 

@@ -6,9 +6,6 @@
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "reelai",
-    "schemes": [
-      "reelai"
-    ],
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
