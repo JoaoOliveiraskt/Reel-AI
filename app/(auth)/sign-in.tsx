@@ -17,7 +17,7 @@ export default function SignInScreen() {
 
     React.useEffect(() => {
         if (isLoaded && isSignedIn) {
-            router.replace('/(tabs)');
+            router.replace('/onboarding');
         }
     }, [isLoaded, isSignedIn, router]);
 

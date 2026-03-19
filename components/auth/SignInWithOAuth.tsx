@@ -8,7 +8,6 @@ import { Text } from '@/components/ui/text';
 import { View } from '@/components/ui/view';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-import { useWarmUpBrowser } from '@/hooks/useWarmUpBrowser';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -30,8 +29,6 @@ function isAlreadySignedInError(err: any) {
 }
 
 export function SignInWithOAuth({ mode = 'sign-in' }: SignInWithOAuthProps) {
-  useWarmUpBrowser();
-
   const { startSSOFlow } = useSSO();
   const router = useRouter();
   const colorScheme = useColorScheme();
@@ -64,13 +61,24 @@ export function SignInWithOAuth({ mode = 'sign-in' }: SignInWithOAuthProps) {
         console.log('🔵 [OAuth] Ativando sessão...');
         await result.setActive({ session: result.createdSessionId });
         console.log('🟢 [OAuth] Sessão ativada com sucesso!');
-        router.replace('/(tabs)');
+        router.replace('/onboarding');
         return;
       } else {
         console.warn('⚠️ [OAuth] Nenhuma sessão criada. Resultado:', result);
         if (result.authSessionResult?.type === 'dismiss' || result.authSessionResult?.type === 'cancel') {
+          alert('Se você estava confirmando a verificação de 2 etapas do Google, por favor clique em "Continue with Google" novamente para finalizar.\n\n(O sistema fechou o navegador para exibir a verificação).');
           return;
         }
+        
+        // Log extra de signIn e signUp
+        let details = 'Desconhecido';
+        if (result.signIn) {
+          details = `SignIn Status: ${result.signIn.status}`;
+        } else if (result.signUp) {
+          details = `SignUp Status: ${result.signUp.status}`;
+        }
+        
+        alert(`O login OAuth falhou em criar a sessão. Detalhes: ${details}`);
       }
     } catch (err: any) {
       if (isAlreadySignedInError(err)) {

@@ -1,7 +1,6 @@
 import { View, StyleSheet, Dimensions, Image } from "react-native";
 import { Onboarding, OnboardingStep } from "@/components/ui/onboarding";
 import { Film, MessageCircle, Sparkles } from "lucide-react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const { width, height } = Dimensions.get("window");
 
@@ -106,21 +105,11 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
   ];
 
   const handleComplete = async () => {
-    try {
-      await AsyncStorage.setItem("onboarding_completed", "true");
-      onComplete();
-    } catch (error) {
-      onComplete();
-    }
+    onComplete();
   };
 
   const handleSkip = async () => {
-    try {
-      await AsyncStorage.setItem("onboarding_completed", "true");
-      onComplete();
-    } catch (error) {
-      onComplete();
-    }
+    onComplete();
   };
 
   return (
