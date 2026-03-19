@@ -1,4 +1,4 @@
-import { AppleMusicTabBar } from '@/components/navigation/AppleMusicTabBar';
+import { TabBar } from '@/components/navigation/TabBar';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { useAuth } from '@clerk/clerk-expo';
 import { Tabs, useRouter } from 'expo-router';
@@ -26,7 +26,7 @@ export default function TabLayout() {
   return (
     <Tabs
       detachInactiveScreens={false}
-      tabBar={(props) => <AppleMusicTabBar {...props} />}
+      tabBar={(props) => <TabBar {...props} />}
       screenOptions={{
         headerShown: false,
         tabBarHideOnKeyboard: true,

@@ -34,7 +34,7 @@ function triggerHaptic() {
   }
 }
 
-export function AppleMusicTabBar({
+export function TabBar({
   state,
   descriptors,
   navigation,

@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 android/
 ios/
+GEMINI.md
 
 # Expo env files
 .env
