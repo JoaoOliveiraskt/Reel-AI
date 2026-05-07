@@ -36,7 +36,7 @@ Este projeto foi construído com uma stack moderna focada em performance e exper
 1.  Clone o repositório:
 
     ```bash
-    git clone https://github.com/seu-usuario/reelai.git
+    git clone https://github.com/JoaoOliveiraskt/Reel-AI.git
     cd reelai
     ```
 
