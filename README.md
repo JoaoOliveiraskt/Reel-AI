@@ -1,6 +1,6 @@
 # ReelAI 🎬
 
-ReelAI é um aplicativo móvel desenvolvido como MVP (Minimum Viable Product) para o meu Trabalho Final de Curso. O objetivo é simplificar a descoberta de filmes e séries utilizando Inteligência Artificial Generativa para recomendações personalizadas e dados em tempo real sobre disponibilidade em serviços de streaming.
+ReelAI é um aplicativo móvel. O objetivo é simplificar a descoberta de filmes e séries utilizando Inteligência Artificial Generativa para recomendações personalizadas e dados em tempo real sobre disponibilidade em serviços de streaming.
 
 ## 📱 Funcionalidades
 
