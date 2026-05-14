@@ -1,6 +1,6 @@
 # ReelAI 🎬
 
-ReelAI é um aplicativo móvel. O objetivo é simplificar a descoberta de filmes e séries utilizando Inteligência Artificial Generativa para recomendações personalizadas e dados em tempo real sobre disponibilidade em serviços de streaming.
+ReelAI é um aplicativo móvel para descobrir filmes e séries com menos busca e mais contexto. A plataforma combina recomendações personalizadas por Inteligência Artificial, catálogo atualizado do TMDB e dados de disponibilidade em serviços de streaming para ajudar o usuário a encontrar o que assistir.
 
 ## 📱 Funcionalidades
 
@@ -56,6 +56,7 @@ Este projeto foi construído com uma stack moderna focada em performance e exper
     ```
 
 4.  Execute o projeto:
+
     ```bash
     npx expo start
     ```
